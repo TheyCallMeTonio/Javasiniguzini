@@ -1,0 +1,101 @@
+1. git clone
+git clone <url-remoto>
+git clone <url-remoto> <carpeta>
+
+
+📌 No se indican ramas aquí (por defecto clona la principal).
+
+🔹 2. git remote
+git remote
+git remote -v
+git remote add <remoto> <url>
+git remote remove <remoto>
+git remote rename <viejo> <nuevo>
+
+🔹 3. git fetch
+git fetch <remoto>
+git fetch <remoto> <rama-remota>
+git fetch --all
+
+
+Ejemplo:
+
+git fetch origin main
+
+🔹 4. git pull (merge)
+git pull <remoto> <rama-remota>
+git pull --rebase <remoto> <rama-remota>
+git pull --allow-unrelated-histories <remoto> <rama-remota>
+git pull --rebase <remoto> <rama-remota> --allow-unrelated-histories
+
+
+📌 La rama local NO se escribe (es la actual).
+
+🔹 5. git push (EL MÁS IMPORTANTE 🔥)
+Básico
+git push <remoto> <rama-local>
+
+
+Ejemplo:
+
+git push origin main
+
+
+👉 Empuja main local → origin/main.
+
+Explícito (local → remota)
+git push <remoto> <rama-local>:<rama-remota>
+
+
+Ejemplo:
+
+git push origin dev:main
+
+Borrar rama remota
+git push <remoto> --delete <rama-remota>
+
+Establecer upstream
+git push -u <remoto> <rama-local>
+
+🔹 6. git branch
+Crear rama local
+git branch <rama-local>
+
+Crear rama local desde remota
+git branch <rama-local> <remoto>/<rama-remota>
+
+🔹 7. git checkout
+git checkout <rama-local>
+git checkout -b <rama-local>
+git checkout -b <rama-local> <remoto>/<rama-remota>
+
+🔹 8. git switch (moderno)
+git switch <rama-local>
+git switch -c <rama-local>
+git switch -c <rama-local> <remoto>/<rama-remota>
+
+🔹 9. git merge
+git merge <rama-local>
+git merge <remoto>/<rama-remota>
+git merge <remoto>/<rama-remota> --allow-unrelated-histories
+
+
+📌 Se fusiona hacia la rama actual.
+
+🔹 10. git rebase
+git rebase <rama-local>
+git rebase <remoto>/<rama-remota>
+git rebase <remoto>/<rama-remota> --allow-unrelated-histories
+
+🔹 11. git reset (con remoto)
+git reset --hard <remoto>/<rama-remota>
+
+
+⚠️ destructivo.
+
+🔹 12. git diff
+git diff
+git diff <rama-local>
+git diff <rama-local> <rama-local>
+git diff <remoto>/<rama-remota>
+git diff <rama-local> <remoto>/<rama-remota>
